@@ -25,4 +25,4 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          SITE_URL: https://cv-personal.pages.dev
+          SITE_URL: https://cv-portfolio.developmentjack05.workers.dev

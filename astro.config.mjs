@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
 
 const site =
-  process.env.SITE_URL ?? 'https://cv-personal.pages.dev';
+  process.env.SITE_URL ?? 'https://cv-portfolio.developmentjack05.workers.dev';
 
 // https://astro.build/config
 export default defineConfig({

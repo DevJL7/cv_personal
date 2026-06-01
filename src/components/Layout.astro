@@ -1,5 +1,5 @@
 ---
-import { Github, Linkedin } from 'lucide-astro';
+import { getSocialIcon } from '../lib/social-icons';
 import '../styles/global.css';
 import ThemeToggle from './ui/ThemeToggle.astro';
 import CommandPalette from './CommandPalette.astro';
@@ -115,7 +115,7 @@ const navItems = [
             <div class="flex gap-2">
               {
                 site.social.map((link) => {
-                  const Icon = link.icon === 'github' ? Github : Linkedin;
+                  const Icon = getSocialIcon(link.icon);
                   return (
                     <a
                       href={link.href}

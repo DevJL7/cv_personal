@@ -1,0 +1,43 @@
+---
+import { Mail } from 'lucide-astro';
+import { getGmailComposeUrl } from '../../lib/contact';
+import { site } from '../../data/site';
+
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  showLabel?: boolean;
+  class?: string;
+}
+
+const {
+  variant = 'secondary',
+  showLabel = true,
+  class: className = '',
+} = Astro.props;
+
+const href = site.email ? getGmailComposeUrl(site.email) : undefined;
+const label = 'Contactar por correo';
+
+const variantClass = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  ghost: 'btn-ghost !w-auto !px-4 gap-2',
+}[variant];
+---
+
+{
+  href && (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class:list={[variantClass, className]}
+      aria-label={label}
+      data-magnetic={variant !== 'ghost' ? true : undefined}
+      data-magnetic-strength={variant !== 'ghost' ? '0.2' : undefined}
+    >
+      <Mail class="size-5 shrink-0" aria-hidden="true" />
+      {showLabel && <span>{variant === 'ghost' ? 'Email' : 'Contactar'}</span>}
+    </a>
+  )
+}

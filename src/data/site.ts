@@ -1,4 +1,7 @@
 import type { SiteConfig } from '../types/content';
+import { getGmailComposeUrl } from '../lib/contact';
+
+const email = 'developmentjack05@gmail.com';
 
 export const site: SiteConfig = {
   name: 'Jackson Londoño',
@@ -10,6 +13,7 @@ export const site: SiteConfig = {
     'Soy desarrollador con perfil amplio: fuerte en frontend y experiencia de usuario, cómodo en backend (.NET, Blazor, PERN) y en constante aprendizaje hacia DevOps. En SL Humanik trabajo en Insights & Archetypes; uso IA y Cursor para entregar con más calidad y velocidad.',
   location: 'Bogotá, Colombia',
   employer: 'SL Humanik · Insights & Archetypes',
+  email,
   cvPdfPath: '/cv.pdf',
   social: [
     {
@@ -18,9 +22,9 @@ export const site: SiteConfig = {
       icon: 'github',
     },
     {
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/alexxis4ever',
-      icon: 'linkedin',
+      label: 'Enviar correo',
+      href: getGmailComposeUrl(email),
+      icon: 'email',
     },
   ],
   seo: {

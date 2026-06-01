@@ -577,6 +577,26 @@
     transform: translateY(0);
   }
 
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-surface/60 px-5 py-3 text-sm font-medium text-foreground;
+    transition:
+      border-color var(--duration-fast) var(--ease-in-out-soft),
+      background-color var(--duration-fast) var(--ease-in-out-soft),
+      color var(--duration-fast) var(--ease-in-out-soft),
+      transform var(--duration-fast) var(--ease-out-expo),
+      box-shadow var(--duration-normal) var(--ease-out-expo);
+  }
+
+  .btn-secondary:hover {
+    @apply border-accent/35 bg-surface-elevated text-foreground;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px -6px color-mix(in oklab, var(--color-accent) 35%, transparent);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0);
+  }
+
   .btn-ghost {
     @apply flex size-11 items-center justify-center rounded-xl border border-border/60 bg-surface/50 text-muted;
     transition:

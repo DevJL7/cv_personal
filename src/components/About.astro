@@ -1,4 +1,5 @@
 ---
+import { getGmailComposeUrl } from '../lib/contact';
 import { aboutHighlights } from '../data/about';
 import { site } from '../data/site';
 import AnimatedReveal from './motion/AnimatedReveal.astro';
@@ -35,6 +36,25 @@ import SectionHeader from './ui/SectionHeader.astro';
               {site.employer ?? 'SL Humanik · Insights & Archetypes'}
             </dd>
           </div>
+          {
+            site.email && (
+              <div>
+                <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                  Contacto
+                </dt>
+                <dd class="mt-1">
+                  <a
+                    href={getGmailComposeUrl(site.email)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-subtle font-medium text-foreground"
+                  >
+                    {site.email}
+                  </a>
+                </dd>
+              </div>
+            )
+          }
         </dl>
       </div>
     </AnimatedReveal>

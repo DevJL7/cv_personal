@@ -1,4 +1,5 @@
 import type { PaletteCommand } from '../types/content';
+import { getGmailComposeUrl } from '../lib/contact';
 import { site } from './site';
 
 export const paletteCommands: PaletteCommand[] = [
@@ -66,12 +67,12 @@ export const paletteCommands: PaletteCommand[] = [
     target: 'https://github.com/DevJL7',
   },
   {
-    id: 'linkedin',
-    label: 'Abrir LinkedIn',
-    hint: 'Perfil',
-    keywords: 'linkedin red social',
+    id: 'email',
+    label: 'Contactar por correo',
+    hint: 'Gmail',
+    keywords: 'email correo contacto gmail escribir',
     action: 'link',
-    target: 'https://www.linkedin.com/in/alexxis4ever',
+    target: site.email ? getGmailComposeUrl(site.email) : '#',
   },
   {
     id: 'theme',

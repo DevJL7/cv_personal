@@ -6,7 +6,6 @@
 
 [![Live Demo](https://img.shields.io/badge/🌐_Demo-en_vivo-6366f1?style=for-the-badge)](https://cv-portfolio.developmentjack05.workers.dev)
 [![GitHub](https://img.shields.io/badge/GitHub-DevJL7-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevJL7)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alexxis4ever)
 
 Portafolio/CV interactivo construido con **Astro**, **TypeScript** y **Tailwind CSS**.  
 Diseño tipo IDE, terminal integrada, modo oscuro y despliegue en el edge.
@@ -235,7 +234,7 @@ El workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml) ejecuta `npm 
 
 **Jackson Londoño** · Bogotá, Colombia
 
-[🌐 Sitio](https://cv-portfolio.developmentjack05.workers.dev) · [GitHub](https://github.com/DevJL7) · [LinkedIn](https://www.linkedin.com/in/alexxis4ever)
+[🌐 Sitio](https://cv-portfolio.developmentjack05.workers.dev) · [GitHub](https://github.com/DevJL7)
 
 Hecho con Astro · TypeScript · Tailwind · Cloudflare Workers
 

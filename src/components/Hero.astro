@@ -1,5 +1,6 @@
 ---
-import { Github, Linkedin } from 'lucide-astro';
+import { getSocialIcon } from '../lib/social-icons';
+import ContactButton from './ui/ContactButton.astro';
 import AnimatedReveal from './motion/AnimatedReveal.astro';
 import TerminalPreview from './TerminalPreview.astro';
 import { site } from '../data/site';
@@ -88,10 +89,11 @@ const typewriterPhrases = [
           >
             Descargar CV
           </a>
+          <ContactButton variant="secondary" />
           <div class="flex gap-2">
             {
               site.social.map((link) => {
-                const Icon = link.icon === 'github' ? Github : Linkedin;
+                const Icon = getSocialIcon(link.icon);
                 return (
                   <a
                     href={link.href}

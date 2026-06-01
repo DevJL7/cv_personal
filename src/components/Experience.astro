@@ -1,0 +1,105 @@
+---
+import { experience } from '../data/experience';
+import AnimatedReveal from './motion/AnimatedReveal.astro';
+import Badge from './ui/Badge.astro';
+import SectionHeader from './ui/SectionHeader.astro';
+
+const commitHashes = ['a3f9c2d', '7b1e4a8'];
+---
+
+<section
+  id="experience"
+  class="scroll-mt-28 py-24"
+  aria-labelledby="experience-heading"
+>
+  <SectionHeader
+    id="experience-heading"
+    label="Trayectoria"
+    title="Experiencia"
+    description="Experiencia profesional en producto digital, con énfasis en frontend y trabajo en equipo."
+  />
+
+  <ol class="relative space-y-0">
+    <div
+      class="timeline-track absolute left-[9px] top-3 bottom-3 w-px md:left-[13px]"
+      aria-hidden="true"
+    >
+      <div class="timeline-track-bg absolute inset-0 bg-border/50"></div>
+      <div
+        class="timeline-track-fill absolute inset-x-0 top-0 bg-gradient-to-b from-accent via-accent/60 to-accent/30"
+        data-timeline-progress
+      ></div>
+    </div>
+
+    {
+      experience.map((item, index) => (
+        <li class="relative pb-14 last:pb-0">
+          <AnimatedReveal delay={index * 0.04} variant="fade-left">
+            <article
+              class="group grid gap-5 pl-10 md:grid-cols-[minmax(150px,190px)_1fr] md:gap-10 md:pl-14"
+            >
+              <div
+                class="absolute left-0 top-2 size-[19px] rounded-full border-2 border-accent/60 bg-background md:left-1 md:size-[27px]"
+                aria-hidden="true"
+              >
+                <span class="absolute inset-[5px] rounded-full bg-accent/90 md:inset-[7px]" />
+              </div>
+
+              <div class="space-y-1 md:pt-1">
+                <time
+                  datetime={item.period}
+                  class="block font-mono text-xs uppercase tracking-wide text-accent"
+                >
+                  {item.period}
+                </time>
+                {item.location && (
+                  <p class="text-xs text-muted-foreground">{item.location}</p>
+                )}
+              </div>
+
+              <div class="dev-card card relative overflow-hidden p-6 sm:p-7" data-spotlight data-tilt data-tilt-max="4">
+                <div class="git-hover-panel" aria-hidden="true">
+                  <p class="font-mono text-[11px] text-muted-foreground">git log --oneline -1</p>
+                  <p class="mt-1 font-mono text-xs">
+                    <span class="text-accent">{commitHashes[index] ?? 'c0ffee0'}</span>
+                    <span class="text-muted-foreground"> feat: </span>
+                    <span class="text-foreground">{item.role}</span>
+                    <span class="text-muted-foreground"> @ {item.company.split(' — ')[0]}</span>
+                  </p>
+                </div>
+
+                <header>
+                  <h3
+                    class="text-lg font-semibold text-foreground"
+                    id={`exp-${item.id}`}
+                  >
+                    {item.role}
+                  </h3>
+                  <p class="mt-1 text-sm text-muted">{item.company}</p>
+                </header>
+
+                <ul class="mt-5 space-y-3" role="list">
+                  {item.highlights.map((highlight) => (
+                    <li class="flex gap-3 text-sm leading-relaxed text-muted">
+                      <span
+                        class="mt-2.5 size-1 shrink-0 rounded-full bg-muted-foreground/50"
+                        aria-hidden="true"
+                      />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="mt-6 flex flex-wrap gap-2 border-t border-border/40 pt-5">
+                  {item.technologies.map((tech) => (
+                    <Badge label={tech} />
+                  ))}
+                </div>
+              </div>
+            </article>
+          </AnimatedReveal>
+        </li>
+      ))
+    }
+  </ol>
+</section>

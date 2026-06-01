@@ -1,0 +1,61 @@
+---
+import { skillCategories } from '../data/skills';
+import { getSkillSnippet } from '../data/skillSnippets';
+import AnimatedReveal from './motion/AnimatedReveal.astro';
+import SectionHeader from './ui/SectionHeader.astro';
+---
+
+<section id="skills" class="scroll-mt-28 py-24" aria-labelledby="skills-heading">
+  <SectionHeader
+    id="skills-heading"
+    label="Stack"
+    title="Habilidades"
+    description="Tecnologías y enfoques que uso según el contexto del proyecto. Pasa el cursor sobre un skill."
+  />
+
+  <div
+    class="skill-preview-panel mb-6"
+    data-skill-preview
+    aria-live="polite"
+    aria-label="Vista previa de código del skill"
+  >
+    <div class="skill-preview-header">
+      <span class="size-2 rounded-full bg-red-500/70" aria-hidden="true"></span>
+      <span class="size-2 rounded-full bg-amber-500/70" aria-hidden="true"></span>
+      <span class="size-2 rounded-full bg-emerald-500/70" aria-hidden="true"></span>
+      <span class="ml-2 font-mono text-[10px] text-muted-foreground">skill-preview.ts</span>
+    </div>
+    <pre class="skill-preview-code"><code data-skill-preview-code>// hover a skill para ver código</code></pre>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      skillCategories.map((category, index) => (
+        <AnimatedReveal delay={index * 0.03}>
+          <article class="dev-card card h-full p-6" data-spotlight>
+            <h3
+              class="border-l-2 border-accent/50 pl-3 text-base font-semibold leading-snug text-foreground"
+            >
+              {category.title}
+            </h3>
+
+            <ul class="mt-5 flex flex-wrap gap-2" role="list">
+              {category.skills.map((skill) => (
+                <li>
+                  <button
+                    type="button"
+                    class="chip chip-interactive"
+                    data-skill-code={getSkillSnippet(skill)}
+                    tabindex="0"
+                  >
+                    {skill}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </AnimatedReveal>
+      ))
+    }
+  </div>
+</section>

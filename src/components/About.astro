@@ -1,0 +1,59 @@
+---
+import { aboutHighlights } from '../data/about';
+import { site } from '../data/site';
+import AnimatedReveal from './motion/AnimatedReveal.astro';
+import SectionHeader from './ui/SectionHeader.astro';
+---
+
+<section id="about" class="scroll-mt-28 py-24" aria-labelledby="about-heading">
+  <SectionHeader
+    id="about-heading"
+    label="Perfil"
+    title="Sobre mí"
+    description="Quién soy, cómo trabajo y qué busco aportar en cada proyecto."
+  />
+
+  <div class="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+    <AnimatedReveal>
+      <div class="card p-8">
+        <p class="text-lg leading-relaxed text-muted">
+          {site.tagline}
+        </p>
+        <hr class="section-divider" />
+        <dl class="space-y-4 text-sm">
+          <div>
+            <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+              Ubicación
+            </dt>
+            <dd class="mt-1 text-foreground">{site.location}</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+              Actualmente
+            </dt>
+            <dd class="mt-1 text-foreground">
+              {site.employer ?? 'SL Humanik · Insights & Archetypes'}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </AnimatedReveal>
+
+    <ul class="space-y-4" role="list">
+      {
+        aboutHighlights.map((item, index) => (
+          <li>
+            <AnimatedReveal delay={index * 0.04} variant="fade-right">
+              <article class="highlight-row border-l-2 border-l-accent/40 pl-5">
+                <h3 class="font-medium text-foreground">{item.title}</h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-muted">
+                  {item.description}
+                </p>
+              </article>
+            </AnimatedReveal>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

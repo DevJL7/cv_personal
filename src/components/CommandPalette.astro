@@ -1,0 +1,35 @@
+<dialog
+  class="command-palette"
+  data-command-palette
+  aria-label="Paleta de comandos"
+>
+  <form data-palette-form class="command-palette-inner">
+    <div class="command-palette-header">
+      <span class="font-mono text-accent-emerald" aria-hidden="true">&gt;_</span>
+      <input
+        type="search"
+        data-palette-input
+        class="command-palette-input"
+        placeholder="Buscar comando…"
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Buscar comando"
+      />
+      <kbd class="palette-kbd">ESC</kbd>
+    </div>
+    <ul
+      data-palette-list
+      class="command-palette-list"
+      role="listbox"
+      aria-label="Resultados"
+    ></ul>
+    <p data-palette-empty class="command-palette-empty" hidden>
+      Sin resultados — prueba "skills", "github" o "terminal"
+    </p>
+    <p class="command-palette-footer">
+      <kbd class="palette-kbd">↑↓</kbd> navegar
+      <span class="text-border mx-2">·</span>
+      <kbd class="palette-kbd">Enter</kbd> ejecutar
+    </p>
+  </form>
+</dialog>

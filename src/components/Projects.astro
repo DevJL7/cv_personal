@@ -1,0 +1,111 @@
+---
+import { projects } from '../data/projects';
+import AnimatedReveal from './motion/AnimatedReveal.astro';
+import Badge from './ui/Badge.astro';
+import SectionHeader from './ui/SectionHeader.astro';
+
+function fileIcon(path: string): string {
+  if (path.endsWith('.tsx') || path.endsWith('.jsx')) return '⚛';
+  if (path.endsWith('.astro')) return '◆';
+  if (path.endsWith('.md')) return '⌘';
+  return '◈';
+}
+---
+
+<section
+  id="projects"
+  class="scroll-mt-28 py-24"
+  aria-labelledby="projects-heading"
+>
+  <SectionHeader
+    id="projects-heading"
+    label="Portfolio"
+    title="Proyectos"
+    description="Proyectos donde combino producto, experiencia de usuario y buenas prácticas de código."
+  />
+
+  <ul class="grid gap-5 sm:grid-cols-2" role="list">
+    {
+      projects.map((project, index) => (
+        <li class={project.featured ? 'sm:col-span-2' : ''}>
+          <AnimatedReveal delay={index * 0.04} variant="scale-up">
+            <article
+              class={`dev-card card relative flex h-full flex-col overflow-hidden ${
+                project.featured ? 'lg:flex-row lg:items-start lg:gap-10' : ''
+              }`}
+              data-spotlight
+              data-tilt
+              data-tilt-max="5"
+            >
+              {
+                project.filePath && (
+                  <div class="file-tab" aria-hidden="true">
+                    <span class="file-tab-icon">{fileIcon(project.filePath)}</span>
+                    <span class="file-tab-path">{project.filePath}</span>
+                    <span class="file-tab-status">modified</span>
+                  </div>
+                )
+              }
+              <div class={`flex min-w-0 flex-1 flex-col p-6 sm:p-7 ${project.featured ? 'lg:p-8' : ''}`}>
+                {project.featured && (
+                  <span
+                    class="mb-3 inline-block font-mono text-[10px] uppercase tracking-wider text-accent"
+                  >
+                    Destacado
+                  </span>
+                )}
+                <h3 class="text-xl font-semibold tracking-tight text-foreground">
+                  {project.title}
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-muted">
+                  {project.description}
+                </p>
+                <p class="mt-4 rounded-lg border border-border/40 bg-surface-elevated/50 px-3 py-2.5 text-sm leading-relaxed text-muted">
+                  <span class="font-medium text-foreground">Impacto · </span>
+                  {project.impact}
+                </p>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <Badge label={tech} />
+                  ))}
+                </div>
+
+                {
+                  (project.demoUrl || project.codeUrl) && (
+                    <div class="mt-6 flex flex-wrap gap-4 text-sm">
+                      {
+                        project.demoUrl && (
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="link-subtle"
+                          >
+                            {project.demoLabel ?? 'Ver demo'} →
+                          </a>
+                        )
+                      }
+                      {
+                        project.codeUrl && (
+                          <a
+                            href={project.codeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="link-subtle"
+                          >
+                            Código →
+                          </a>
+                        )
+                      }
+                    </div>
+                  )
+                }
+              </div>
+            </article>
+          </AnimatedReveal>
+        </li>
+      ))
+    }
+  </ul>
+</section>

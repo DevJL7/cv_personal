@@ -1,0 +1,96 @@
+import type { SkillCategory } from '../types/content';
+
+export const skillCategories: SkillCategory[] = [
+  {
+    id: 'frontend',
+    title: 'Frontend — mi fuerte',
+    icon: 'frontend',
+    skills: [
+      'React',
+      'Vite',
+      'Blazor',
+      'TypeScript',
+      'JavaScript',
+      'Interfaces y componentes',
+    ],
+  },
+  {
+    id: 'ux',
+    title: 'UX, diseño & usabilidad',
+    icon: 'ux',
+    skills: [
+      'Experiencia de usuario',
+      'Facilidad de uso',
+      'Diseño de interfaces',
+      'Flujos intuitivos',
+      'Accesibilidad básica',
+      'Detalle visual',
+    ],
+  },
+  {
+    id: 'backend',
+    title: 'Backend — también lo trabajo',
+    icon: 'backend',
+    skills: [
+      'C#',
+      '.NET',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'Supabase',
+      'APIs REST',
+    ],
+  },
+  {
+    id: 'cloud',
+    title: 'Nube, media & deploy',
+    icon: 'cloud',
+    skills: [
+      'Netlify',
+      'Render',
+      'Cloudinary',
+      'Imágenes y video',
+      'Git / GitHub',
+      'Variables de entorno',
+    ],
+  },
+  {
+    id: 'devops',
+    title: 'DevOps — en crecimiento',
+    icon: 'devops',
+    skills: [
+      'Interés activo en DevOps',
+      'CI/CD (aprendiendo)',
+      'Automatización de deploys',
+      'Scripts y pipelines',
+      'Infra y entornos',
+      'Mejora continua',
+    ],
+  },
+  {
+    id: 'ai',
+    title: 'IA, seguridad & productividad',
+    icon: 'ai',
+    skills: [
+      'ChatGPT / asistentes IA',
+      'Cursor',
+      'Revisión de seguridad',
+      'Desarrollo y pruebas asistidos',
+      'Automatización de procesos',
+      'Soporte de aplicaciones',
+    ],
+  },
+  {
+    id: 'collaboration',
+    title: 'Perfil & forma de trabajar',
+    icon: 'collaboration',
+    skills: [
+      'Autodidacta',
+      'Aprendizaje continuo',
+      'Asumir retos',
+      'Innovar',
+      'Automatizar procesos',
+      'Trabajo en equipo',
+    ],
+  },
+];

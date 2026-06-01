@@ -1,0 +1,77 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL: URL;
+}
+
+const { title, description, canonicalURL } = Astro.props;
+
+const siteUrl = Astro.site ?? canonicalURL;
+const ogImage = site.seo.ogImage
+  ? new URL(site.seo.ogImage, siteUrl).href
+  : undefined;
+
+const employerName = site.employer?.split(' · ')[0];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: site.role,
+  description: site.seo.description,
+  url: canonicalURL.href,
+  image: ogImage,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bogotá',
+    addressRegion: 'Cundinamarca',
+    addressCountry: 'CO',
+  },
+  sameAs: site.social.map((link) => link.href),
+  ...(employerName && {
+    worksFor: {
+      '@type': 'Organization',
+      name: employerName,
+    },
+  }),
+};
+
+const webSiteData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.seo.title,
+  url: siteUrl.href,
+  description: site.seo.description,
+  inLanguage: 'es-CO',
+  author: {
+    '@type': 'Person',
+    name: site.name,
+  },
+};
+---
+
+<meta name="description" content={description} />
+<meta name="author" content={site.name} />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+
+<meta property="og:type" content="profile" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL.href} />
+<meta property="og:locale" content="es_CO" />
+<meta property="og:site_name" content={site.name} />
+{ogImage && <meta property="og:image" content={ogImage} />}
+{ogImage && <meta property="og:image:alt" content={`Portafolio de ${site.name}`} />}
+
+<meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImage && <meta name="twitter:image" content={ogImage} />}
+
+<link rel="canonical" href={canonicalURL.href} />
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<script type="application/ld+json" set:html={JSON.stringify(webSiteData)} />

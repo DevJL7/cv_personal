@@ -1,0 +1,88 @@
+---
+import { terminalCommands, terminalWelcome } from '../data/terminal';
+---
+
+<div
+  class="terminal card overflow-hidden rounded-2xl font-mono text-sm shadow-lg shadow-accent/5"
+  id="terminal"
+  data-commands={JSON.stringify(terminalCommands)}
+  data-welcome={JSON.stringify(terminalWelcome)}
+  tabindex="0"
+  role="region"
+  aria-label="Terminal interactivo. Escribe un comando y presiona Enter."
+>
+  <div
+    class="flex items-center gap-2 border-b border-border/60 bg-surface-elevated/90 px-4 py-3"
+  >
+    <span class="size-3 rounded-full bg-red-500/70" aria-hidden="true"></span>
+    <span class="size-3 rounded-full bg-amber-500/70" aria-hidden="true"></span>
+    <span class="size-3 rounded-full bg-emerald-500/70" aria-hidden="true"></span>
+    <span class="ml-2 text-xs text-muted-foreground">bash — portfolio</span>
+  </div>
+
+  <div
+    id="terminal-output"
+    class="terminal-output max-h-56 space-y-1 overflow-y-auto p-4 leading-relaxed"
+    role="log"
+    aria-live="polite"
+    aria-relevant="additions"
+  >
+    {
+      terminalWelcome.map((line) => (
+        <p class="terminal-line text-muted-foreground">{line}</p>
+      ))
+    }
+  </div>
+
+  <div
+    class="border-t border-border/40 bg-surface-elevated/40 px-4 py-2"
+    aria-hidden="true"
+  >
+    <p class="text-[11px] text-muted-foreground">
+      <span class="text-muted">Escribe un comando</span>
+      <span class="mx-1.5 text-border">·</span>
+      <kbd class="kbd">Enter</kbd>
+      <span class="mx-1">para ejecutar</span>
+      <span class="hidden text-border sm:inline">·</span>
+      <span class="hidden sm:inline">↑↓ historial</span>
+    </p>
+  </div>
+
+  <form
+    id="terminal-form"
+    class="flex items-center gap-2 border-t border-border/60 bg-background/50 px-4 py-3"
+  >
+    <label for="terminal-input" class="sr-only">
+      Comando del terminal. Pulsa Enter para ejecutar.
+    </label>
+    <span class="shrink-0 select-none text-accent-emerald" aria-hidden="true">$</span>
+    <input
+      id="terminal-input"
+      type="text"
+      name="command"
+      enterkeyhint="go"
+      autocomplete="off"
+      spellcheck="false"
+      autocapitalize="off"
+      class="min-w-0 flex-1 bg-transparent text-foreground caret-accent-emerald outline-none placeholder:text-muted-foreground/70"
+      placeholder="help"
+    />
+    <button
+      type="submit"
+      class="terminal-submit shrink-0 rounded-md border border-border/50 bg-surface-elevated/80 px-2.5 py-1 text-[11px] text-muted transition-[color,border-color,background-color] duration-200 hover:border-accent/30 hover:bg-surface hover:text-foreground"
+      aria-label="Ejecutar comando"
+    >
+      Enter ↵
+    </button>
+  </form>
+</div>
+
+<style>
+  .terminal:focus-within {
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-accent) 35%, transparent);
+  }
+
+  .terminal-submit:active {
+    transform: scale(0.97);
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import { site } from '../data/site';
+
+const firstName = site.name.split(' ')[0].toLowerCase();
+---
+
+<div class="dev-status-bar" aria-hidden="true">
+  <div class="dev-status-bar-inner">
+    <span class="dev-status-item dev-status-branch">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="6" cy="6" r="3"></circle>
+        <circle cx="18" cy="18" r="3"></circle>
+        <path d="M6 9v6a3 3 0 0 0 3 3h6"></path>
+      </svg>
+      main
+    </span>
+    <span class="dev-status-item text-accent-emerald/90">● working tree clean</span>
+    <span class="dev-status-item hidden sm:inline">{firstName}.dev</span>
+    <span class="dev-status-item hidden md:inline">TypeScript</span>
+    <span class="dev-status-item hidden lg:inline">UTF-8</span>
+    <button
+      type="button"
+      class="dev-status-palette"
+      data-open-palette
+      title="Paleta de comandos (Ctrl+K)"
+    >
+      <kbd class="palette-kbd-sm">Ctrl</kbd>
+      <kbd class="palette-kbd-sm">K</kbd>
+      <span class="hidden sm:inline">comandos</span>
+    </button>
+  </div>
+</div>

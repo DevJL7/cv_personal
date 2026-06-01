@@ -1,0 +1,21 @@
+---
+type RevealVariant = 'fade-up' | 'fade-left' | 'fade-right' | 'scale-up' | 'blur-up';
+
+interface Props {
+  class?: string;
+  /** Retraso en segundos (máx. ~0.12s recomendado) */
+  delay?: number;
+  variant?: RevealVariant;
+}
+
+const { class: className = '', delay = 0, variant = 'fade-up' } = Astro.props;
+const delayMs = Math.min(Math.round(delay * 1000), 200);
+---
+
+<div
+  class:list={['reveal-on-scroll', className]}
+  data-reveal={variant}
+  data-reveal-delay={delayMs}
+>
+  <slot />
+</div>

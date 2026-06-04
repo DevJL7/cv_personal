@@ -74,6 +74,7 @@ export const terminalCommands: Record<string, TerminalCommand> = {
     output: [
       `Email:     ${site.email ?? 'developmentjack05@gmail.com'}`,
       'GitHub:    github.com/DevJL7',
+      'LinkedIn:  linkedin.com/in/alexxis4ever07',
       'Ubicación: Bogotá, Colombia (UTC-5)',
       '',
       'Tip: usa el botón Contactar o Ctrl+K → correo.',

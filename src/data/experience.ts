@@ -8,10 +8,13 @@ export const experience: ExperienceItem[] = [
     period: 'Sep 2024 — Presente',
     location: 'Bogotá, Colombia',
     highlights: [
-      'Desarrollo de features en React, Vite y Blazor, priorizando usabilidad, diseño de interfaces y entregas estables.',
-      'Soporte backend con C#, .NET, PERN y Supabase; gestión de media en Cloudinary y despliegues en Netlify y Render.',
-      'Uso de IA (chat y Cursor) en desarrollo, pruebas, revisión de seguridad y soporte de aplicativos en producción.',
-      'Automatización de tareas, trabajo en equipo y propuestas de mejora continua en el producto.',
+      'Desarrollo de páginas web estáticas y dinámicas, internas para la empresa y orientadas a clientes del producto.',
+      'Construcción de pantallas y flujos completos en React, Vite y Blazor, con foco en frontend, interfaz y experiencia de usuario.',
+      'Referente habitual en ajustes visuales, consistencia de UI y pulido de interfaces en apps y páginas internas.',
+      'Entregas aceleradas con Cursor e IA (chat) manteniendo criterio de diseño, usabilidad y código mantenible.',
+      'Soporte backend con C#, .NET, PERN y Supabase; media en Cloudinary y despliegues en Netlify y Render cuando el alcance lo exige.',
+      'Manejo de Power BI a nivel junior: reportes, visualizaciones y apoyo en análisis de datos para el equipo.',
+      'Automatización de tareas repetibles, trabajo en equipo y propuestas de mejora continua en el producto.',
     ],
     technologies: [
       'React',
@@ -26,6 +29,7 @@ export const experience: ExperienceItem[] = [
       'Netlify',
       'Render',
       'Cursor',
+      'Power BI',
     ],
   },
   {
@@ -35,9 +39,10 @@ export const experience: ExperienceItem[] = [
     period: 'Abr 2024 — Sep 2024',
     location: 'Bogotá, Colombia',
     highlights: [
-      'Prácticas profesionales en el producto Insights & Archetypes, en un entorno real de desarrollo.',
-      'Apoyo en frontend, corrección de bugs, documentación y primeros despliegues.',
-      'Base técnica en .NET, React y bases de datos que llevó a la contratación formal en septiembre de 2024.',
+      'Prácticas profesionales en Insights & Archetypes, con trabajo real en páginas y componentes del producto.',
+      'Apoyo en frontend: maquetación, ajustes visuales, corrección de bugs y primeras páginas internas.',
+      'Documentación, Git en equipo y primeros despliegues junto al stack .NET y React.',
+      'Base técnica que derivó en contratación formal como IA Software Developer en septiembre de 2024.',
     ],
     technologies: [
       'React',

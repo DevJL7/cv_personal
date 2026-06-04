@@ -22,6 +22,11 @@ export const site: SiteConfig = {
       icon: 'github',
     },
     {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/alexxis4ever07/',
+      icon: 'linkedin',
+    },
+    {
       label: 'Enviar correo',
       href: getGmailComposeUrl(email),
       icon: 'email',

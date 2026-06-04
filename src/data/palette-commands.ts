@@ -67,6 +67,14 @@ export const paletteCommands: PaletteCommand[] = [
     target: 'https://github.com/DevJL7',
   },
   {
+    id: 'linkedin',
+    label: 'Abrir LinkedIn',
+    hint: 'alexxis4ever07',
+    keywords: 'linkedin red profesional perfil',
+    action: 'link',
+    target: 'https://www.linkedin.com/in/alexxis4ever07/',
+  },
+  {
     id: 'email',
     label: 'Contactar por correo',
     hint: 'Gmail',

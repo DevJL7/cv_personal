@@ -2,47 +2,23 @@ import type { ProjectItem } from '../types/content';
 
 export const projects: ProjectItem[] = [
   {
-    id: 'proj-humanik',
-    title: 'Insights & Archetypes',
+    id: 'proj-1',
+    title: 'Proyecto 1',
     description:
-      'Producto digital de SL Humanik en el que participo como IA Software Developer.',
+      'Iniciativa personal en la que estoy armando la idea, el alcance y las primeras pantallas.',
     impact:
-      'Contribución en módulos de frontend y full stack, con foco en experiencia de usuario, integraciones y despliegues confiables.',
-    technologies: [
-      'React',
-      'Vite',
-      'Blazor',
-      'C#',
-      '.NET',
-      'PERN',
-      'Supabase',
-      'Cloudinary',
-      'UX',
-      'IA',
-    ],
-    filePath: 'src/products/insights-archetypes.tsx',
-    featured: true,
+      'Estado: en desarrollo. Aún no hay demo ni repositorio público — lo estoy construyendo paso a paso.',
+    technologies: ['En desarrollo'],
+    filePath: 'proyecto-1/README.md',
   },
   {
-    id: 'proj-portfolio',
-    title: 'Portafolio personal',
+    id: 'proj-2',
+    title: 'Proyecto 2',
     description:
-      'Este sitio: CV interactivo con Astro, TypeScript y terminal integrado.',
+      'Segundo proyecto en paralelo: definición técnica y primeras piezas de implementación.',
     impact:
-      'Rápido, accesible y fácil de actualizar — el contenido vive en archivos de datos tipados.',
-    technologies: ['Astro', 'TypeScript', 'Tailwind CSS', 'UX'],
-    filePath: 'src/pages/index.astro',
-    codeUrl: 'https://github.com/DevJL7',
-    featured: true,
-  },
-  {
-    id: 'proj-github',
-    title: 'GitHub — DevJL7',
-    description: 'Experimentos, aprendizaje y código abierto.',
-    impact:
-      'Espacio para probar herramientas, documentar avances y mostrar cómo resuelvo problemas técnicos.',
-    technologies: ['Git', 'GitHub'],
-    filePath: 'github.com/DevJL7/README.md',
-    codeUrl: 'https://github.com/DevJL7',
+      'Estado: en implementación. Sin enlaces externos por ahora; priorizo tener una base sólida antes de publicar.',
+    technologies: ['En implementación'],
+    filePath: 'proyecto-2/README.md',
   },
 ];

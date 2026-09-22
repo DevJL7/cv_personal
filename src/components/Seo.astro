@@ -9,6 +9,10 @@ interface Props {
 
 const { title, description, canonicalURL } = Astro.props;
 
+/** Evita que datos de contenido futuros puedan cerrar un bloque JSON-LD. */
+const serializeJsonLd = (data: object): string =>
+  JSON.stringify(data).replace(/</g, '\\u003c');
+
 const siteUrl = Astro.site ?? canonicalURL;
 const ogImage = site.seo.ogImage
   ? new URL(site.seo.ogImage, siteUrl).href
@@ -73,5 +77,5 @@ const webSiteData = {
 
 <link rel="canonical" href={canonicalURL.href} />
 
-<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-<script type="application/ld+json" set:html={JSON.stringify(webSiteData)} />
+<script type="application/ld+json" set:html={serializeJsonLd(structuredData)} />
+<script type="application/ld+json" set:html={serializeJsonLd(webSiteData)} />

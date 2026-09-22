@@ -43,16 +43,7 @@ const navItems = [
 
     <title>{title}</title>
 
-    <!-- FOUC: debe ser inline; clave sincronizada con STORAGE_KEYS.theme -->
-    <script is:inline>
-      (function () {
-        var key = 'cv-theme';
-        var stored = localStorage.getItem(key);
-        var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
-        document.documentElement.classList.remove('dark', 'light');
-        document.documentElement.classList.add(theme);
-      })();
-    </script>
+    <script is:inline src="/theme-init.js"></script>
   </head>
   <body class="min-h-screen has-status-bar">
     <DevCursor />

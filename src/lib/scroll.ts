@@ -184,7 +184,18 @@ export function initScrollReveals(): void {
   );
 
   elements.forEach((el) => {
-    if (!el.classList.contains('is-visible')) observer.observe(el);
+    const rect = el.getBoundingClientRect();
+    const isInitiallyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    // No ocultar el contenido visible durante la carga: evita una pantalla vacía
+    // mientras Vite, el JS o las fuentes terminan de iniciar.
+    if (isInitiallyVisible) {
+      el.classList.add('is-visible');
+      return;
+    }
+
+    el.classList.add('is-pending');
+    observer.observe(el);
   });
 }
 

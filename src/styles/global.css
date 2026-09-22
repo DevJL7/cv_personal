@@ -201,37 +201,37 @@
 @layer utilities {
   /* ─── Scroll reveal variants ─── */
   .reveal-on-scroll {
-    opacity: 0;
+    /* El contenido crítico debe ser visible aun si el JS tarda o falla. */
+    opacity: 1;
     transition:
       opacity var(--duration-slow) var(--ease-out-expo),
       transform var(--duration-slow) var(--ease-out-expo),
       filter var(--duration-slow) var(--ease-out-expo);
-    will-change: opacity, transform;
   }
 
-  .reveal-on-scroll[data-reveal="fade-up"],
-  .reveal-on-scroll:not([data-reveal]) {
+  .reveal-on-scroll.is-pending {
+    opacity: 0;
+    will-change: opacity, transform, filter;
+  }
+
+  .reveal-on-scroll.is-pending[data-reveal="fade-up"],
+  .reveal-on-scroll.is-pending:not([data-reveal]) {
     transform: translate3d(0, 28px, 0);
   }
 
-  .reveal-on-scroll[data-reveal="fade-left"] {
+  .reveal-on-scroll.is-pending[data-reveal="fade-left"] {
     transform: translate3d(-28px, 0, 0);
   }
 
-  .reveal-on-scroll[data-reveal="fade-right"] {
+  .reveal-on-scroll.is-pending[data-reveal="fade-right"] {
     transform: translate3d(28px, 0, 0);
   }
 
-  .reveal-on-scroll[data-reveal="scale-up"] {
+  .reveal-on-scroll.is-pending[data-reveal="scale-up"] {
     transform: translate3d(0, 16px, 0) scale(0.96);
   }
 
-  .reveal-on-scroll[data-reveal="blur-up"] {
-    transform: translate3d(0, 24px, 0);
-    filter: blur(8px);
-  }
-
-  .reveal-on-scroll[data-reveal="scale-x"] {
+  .reveal-on-scroll.is-pending[data-reveal="scale-x"] {
     transform: scaleX(0);
     transform-origin: center;
     opacity: 0.4;
@@ -240,7 +240,7 @@
   .reveal-on-scroll.is-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
+    will-change: auto;
   }
 
   .reveal-on-scroll[data-reveal="scale-x"].is-visible {
@@ -252,7 +252,6 @@
     .reveal-on-scroll {
       opacity: 1;
       transform: none;
-      filter: none;
       transition: none;
       will-change: auto;
     }

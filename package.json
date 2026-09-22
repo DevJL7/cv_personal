@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Portafolio/CV web premium con Astro, TypeScript y Tailwind CSS",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.12.0 <26"
   },
   "scripts": {
     "dev": "astro dev",

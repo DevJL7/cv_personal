@@ -12,6 +12,8 @@ const site =
 export default defineConfig({
   site,
   compressHTML: true,
+  // Sitio estático: desactiva el aprovisionamiento automático de KV para sesiones.
+  session: false,
 
   vite: {
     plugins: [tailwindcss()],
@@ -26,5 +28,6 @@ export default defineConfig({
     }),
   ],
 
-  adapter: cloudflare(),
+  // No se usa optimización de imágenes ni sesiones en tiempo de ejecución.
+  adapter: cloudflare({ imageService: 'passthrough' }),
 });

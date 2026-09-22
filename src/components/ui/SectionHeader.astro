@@ -12,17 +12,17 @@ const { label, title, description, id } = Astro.props;
 ---
 
 <AnimatedReveal variant="fade-up">
-  <header class="mb-14 max-w-2xl">
-    <p class="section-label mb-4">{label}</p>
+  <header class="mb-10 max-w-2xl sm:mb-14">
+    <p class="section-label mb-3 sm:mb-4">{label}</p>
     <h2
       id={id}
-      class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+      class="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl lg:text-4xl"
     >
       {title}
     </h2>
     {
       description && (
-        <p class="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+        <p class="mt-3 text-sm leading-relaxed text-muted sm:mt-4 sm:text-base lg:text-lg">
           {description}
         </p>
       )

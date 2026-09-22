@@ -209,34 +209,6 @@
       filter var(--duration-slow) var(--ease-out-expo);
   }
 
-  .reveal-on-scroll.is-pending {
-    opacity: 0;
-    will-change: opacity, transform, filter;
-  }
-
-  .reveal-on-scroll.is-pending[data-reveal="fade-up"],
-  .reveal-on-scroll.is-pending:not([data-reveal]) {
-    transform: translate3d(0, 28px, 0);
-  }
-
-  .reveal-on-scroll.is-pending[data-reveal="fade-left"] {
-    transform: translate3d(-28px, 0, 0);
-  }
-
-  .reveal-on-scroll.is-pending[data-reveal="fade-right"] {
-    transform: translate3d(28px, 0, 0);
-  }
-
-  .reveal-on-scroll.is-pending[data-reveal="scale-up"] {
-    transform: translate3d(0, 16px, 0) scale(0.96);
-  }
-
-  .reveal-on-scroll.is-pending[data-reveal="scale-x"] {
-    transform: scaleX(0);
-    transform-origin: center;
-    opacity: 0.4;
-  }
-
   .reveal-on-scroll.is-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
@@ -995,7 +967,7 @@
     inset-inline: 0;
     bottom: 0;
     z-index: 45;
-    height: 26px;
+    height: 30px;
     border-top: 1px solid color-mix(in oklab, var(--color-border) 60%, transparent);
     background: color-mix(in oklab, var(--color-accent) 12%, var(--color-surface));
     font-family: var(--font-mono);
@@ -1022,6 +994,13 @@
     color: var(--color-foreground);
   }
 
+  .status-wide,
+  .status-xl,
+  .status-2xl,
+  .status-palette-label {
+    display: none;
+  }
+
   .dev-status-palette {
     display: inline-flex;
     align-items: center;
@@ -1046,7 +1025,67 @@
   }
 
   .has-status-bar .back-to-top {
-    bottom: calc(1.25rem + 26px);
+    bottom: calc(1.25rem + 30px);
+  }
+
+  @media (max-width: 1023px) {
+    .dev-status-bar {
+      font-size: 10px;
+    }
+
+    .dev-status-bar-inner {
+      gap: 0.5rem;
+      padding-inline: 0.5rem;
+    }
+
+    .dev-status-palette {
+      padding-inline: 0.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dev-status-bar {
+      height: 38px;
+      font-size: 12px;
+    }
+
+    .dev-status-bar-inner {
+      padding-inline: 1rem;
+    }
+
+    .dev-status-palette {
+      padding: 0.25rem 0.5rem;
+    }
+
+    .dev-status-palette .palette-kbd-sm {
+      padding: 0.2rem 0.45rem;
+      font-size: 11px;
+    }
+
+    .status-compact {
+      display: none;
+    }
+
+    .status-wide,
+    .status-palette-label {
+      display: inline-flex;
+    }
+
+    .has-status-bar .back-to-top {
+      bottom: calc(1.25rem + 38px);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .status-xl {
+      display: inline-flex;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .status-2xl {
+      display: inline-flex;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

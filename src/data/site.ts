@@ -5,12 +5,12 @@ const email = 'developmentjack05@gmail.com';
 
 export const site: SiteConfig = {
   name: 'Jackson Londoño',
-  role: 'IA Software Developer',
-  roleFocus: 'Frontend · UX · producto digital',
+  role: 'Software Developer · Frontend, UX & Automatización',
+  roleFocus: 'Frontend · UX · automatización',
   heroLead:
-    'Diseño y desarrollo interfaces que se sienten claras, rápidas y fáciles de usar — con código mantenible detrás.',
+    'Construyo experiencias digitales claras y mantenibles, combinando frontend, automatización e IA aplicada para convertir necesidades de negocio en productos útiles.',
   tagline:
-    'Soy desarrollador con perfil amplio: fuerte en frontend y experiencia de usuario, cómodo en backend (.NET, Blazor, PERN) y en constante aprendizaje hacia DevOps. En SL Humanik trabajo en Insights & Archetypes; uso IA y Cursor para entregar con más calidad y velocidad.',
+    'Soy desarrollador de software con experiencia en productos internos y orientados a clientes. Mi fortaleza está en frontend, UX y automatización, con criterio para conectar interfaces, lógica de negocio y datos. Actualmente curso Ingeniería de Sistemas en la CUN, consolidando una base profesional para diseñar soluciones escalables y generar impacto medible.',
   location: 'Bogotá, Colombia',
   employer: 'SL Humanik · Insights & Archetypes',
   email,
@@ -35,7 +35,7 @@ export const site: SiteConfig = {
   seo: {
     title: 'Jackson Londoño — IA Software Developer',
     description:
-      'Portafolio de Jackson Londoño: IA Software Developer, frontend y UX. .NET, React, PERN, Supabase. Bogotá, Colombia.',
+      'Jackson Londoño, IA Software Developer en Bogotá. Frontend, UX, automatización e IA aplicada; estudiante de Ingeniería de Sistemas.',
     ogImage: '/og-image.png',
   },
 };

@@ -31,15 +31,15 @@ export const terminalCommands: Record<string, TerminalCommand> = {
   whoami: {
     command: 'whoami',
     output:
-      'Jackson Londoño · IA Software Developer · frontend-first · UX · SL Humanik',
+      'Jackson Londoño · IA Software Developer · frontend · UX · automatización',
   },
   about: {
     command: 'about',
     output: [
-      'Desarrollador amplio: más frontend, también backend.',
-      'Me importan la UX, la facilidad y el diseño.',
-      'Autodidacta: retos, automatizar, innovar.',
-      'Me entusiasma crecer hacia DevOps.',
+      'Desarrollador con foco en frontend, UX y automatización.',
+      'Conecto experiencia de usuario, negocio y ejecución técnica.',
+      'Curso Ingeniería de Sistemas en la CUN.',
+      'Me interesan IA aplicada, CI/CD y mejora continua.',
       'Empresa: SL Humanik (Insights & Archetypes)',
     ],
   },
@@ -47,10 +47,10 @@ export const terminalCommands: Record<string, TerminalCommand> = {
     command: 'skills',
     output: [
       'Fuerte:    React, Vite, Blazor, UX, diseño',
-      'También:   C#, .NET, PERN, Supabase',
-      'Nube:      Cloudinary, Netlify, Render',
-      'IA:        ChatGPT, Cursor, seguridad',
-      'Exploro:   DevOps, CI/CD, automatización',
+      'También:   C#, .NET, SQL, PostgreSQL',
+      'Automatizo:n8n, GitHub Actions, CI/CD',
+      'Datos:     Power BI, SQL, PostgreSQL',
+      'IA:        Cursor, Claude, Copilot',
     ],
   },
   stack: {

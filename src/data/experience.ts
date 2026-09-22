@@ -8,13 +8,11 @@ export const experience: ExperienceItem[] = [
     period: 'Sep 2024 — Presente',
     location: 'Bogotá, Colombia',
     highlights: [
-      'Desarrollo de páginas web estáticas y dinámicas, internas para la empresa y orientadas a clientes del producto.',
-      'Construcción de pantallas y flujos completos en React, Vite y Blazor, con foco en frontend, interfaz y experiencia de usuario.',
-      'Referente habitual en ajustes visuales, consistencia de UI y pulido de interfaces en apps y páginas internas.',
-      'Entregas aceleradas con Cursor e IA (chat) manteniendo criterio de diseño, usabilidad y código mantenible.',
-      'Soporte backend con C#, .NET, PERN y Supabase; media en Cloudinary y despliegues en Netlify y Render cuando el alcance lo exige.',
-      'Manejo de Power BI a nivel junior: reportes, visualizaciones y apoyo en análisis de datos para el equipo.',
-      'Automatización de tareas repetibles, trabajo en equipo y propuestas de mejora continua en el producto.',
+      'Lidero el desarrollo y mantenimiento de soluciones internas, definiendo decisiones de interfaz, experiencia de usuario y funcionalidad frontend.',
+      'Diseño e implemento automatizaciones con n8n y flujos de CI/CD en GitHub Actions para agilizar despliegues, notificaciones y tareas repetibles.',
+      'Aporto análisis y reportes con SQL, PostgreSQL y Power BI para transformar datos en información útil para el equipo.',
+      'Integro herramientas de IA como Cursor, Claude y GitHub Copilot para acelerar entregas sin sacrificar calidad, mantenibilidad ni criterio técnico.',
+      'Colaboro de forma transversal con equipos STEM, Git y buenas prácticas de desarrollo para fortalecer la calidad del producto.',
     ],
     technologies: [
       'React',
@@ -39,10 +37,10 @@ export const experience: ExperienceItem[] = [
     period: 'Abr 2024 — Sep 2024',
     location: 'Bogotá, Colombia',
     highlights: [
-      'Prácticas profesionales en Insights & Archetypes, con trabajo real en páginas y componentes del producto.',
-      'Apoyo en frontend: maquetación, ajustes visuales, corrección de bugs y primeras páginas internas.',
-      'Documentación, Git en equipo y primeros despliegues junto al stack .NET y React.',
-      'Base técnica que derivó en contratación formal como IA Software Developer en septiembre de 2024.',
+      'Participé en el ciclo completo de desarrollo de aplicaciones web, desde la interfaz hasta la lógica de negocio.',
+      'Construí y ajusté componentes frontend con React, resolviendo bugs y mejorando la experiencia de usuario.',
+      'Apoyé el mantenimiento de módulos backend y consultas SQL, junto con documentación y trabajo colaborativo con Git.',
+      'El desempeño durante la práctica derivó en mi contratación como IA Software Developer en septiembre de 2024.',
     ],
     technologies: [
       'React',

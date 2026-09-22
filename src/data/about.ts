@@ -1,20 +1,20 @@
 export const aboutHighlights = [
   {
     id: 'frontend',
-    title: 'Frontend con criterio de UX',
+    title: 'Frontend que prioriza al usuario',
     description:
-      'Me importa cómo se ve y cómo se siente usar el producto: jerarquía, fluidez y detalle en cada pantalla.',
+      'Diseño interfaces claras, consistentes y accesibles, cuidando cada detalle que reduce fricción y mejora la experiencia de uso.',
   },
   {
     id: 'fullstack',
-    title: 'Stack según el problema',
+    title: 'Soluciones de punta a punta',
     description:
-      'React, Vite y Blazor en el día a día; .NET y PERN cuando el feature lo exige. Sin inflar la solución.',
+      'Combino React, Vite y Blazor con backend, datos y automatización cuando el reto lo requiere; elijo tecnología con propósito, no por tendencia.',
   },
   {
     id: 'growth',
-    title: 'Aprendizaje activo',
+    title: 'Crecimiento con visión profesional',
     description:
-      'Autodidacta, orientado a retos y a automatizar lo repetible. Explorando DevOps con el mismo enfoque práctico.',
+      'Curso Ingeniería de Sistemas en la CUN y complemento mi formación con práctica constante en IA, CI/CD, automatización y mejora continua.',
   },
 ] as const;

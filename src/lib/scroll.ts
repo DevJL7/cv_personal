@@ -157,45 +157,12 @@ function initBackToTop(): void {
 }
 
 export function initScrollReveals(): void {
-  const reduced = prefersReducedMotion();
-  const elements = document.querySelectorAll('.reveal-on-scroll');
-
-  if (reduced) {
-    elements.forEach((el) => el.classList.add('is-visible'));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const el = entry.target as HTMLElement;
-        const delay = Number(el.dataset.revealDelay || 0);
-
-        window.setTimeout(() => {
-          el.classList.add('is-visible');
-        }, delay);
-
-        observer.unobserve(el);
-      });
-    },
-    { threshold: 0.08, rootMargin: '0px 0px -5% 0px' },
-  );
-
-  elements.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    const isInitiallyVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-    // No ocultar el contenido visible durante la carga: evita una pantalla vacía
-    // mientras Vite, el JS o las fuentes terminan de iniciar.
-    if (isInitiallyVisible) {
+  initOnce('scroll-reveals', () => {
+    // La información del CV siempre debe estar disponible: evitamos ocultarla
+    // detrás de animaciones que pueden retrasarse en dispositivos móviles.
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
       el.classList.add('is-visible');
-      return;
-    }
-
-    el.classList.add('is-pending');
-    observer.observe(el);
+    });
   });
 }
 

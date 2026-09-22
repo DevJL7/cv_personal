@@ -24,20 +24,20 @@ const typewriterPhrases = [
   <div class="relative grid items-center gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-20">
     <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
       <AnimatedReveal>
-        <p class="mb-3 font-mono text-sm text-muted">Hola, soy</p>
+        <p class="mb-2 font-mono text-xs text-muted sm:mb-3 sm:text-sm">Hola, soy</p>
         <h1
           id="hero-heading"
-          class="text-4xl font-semibold tracking-tight sm:text-5xl xl:text-[3.5rem] xl:leading-[1.08]"
+          class="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl xl:text-[3.25rem] xl:leading-[1.08]"
         >
           <span class="text-gradient">{site.name}</span>
         </h1>
       </AnimatedReveal>
 
       <AnimatedReveal delay={0.05}>
-        <p class="mt-4 text-xl font-medium text-gradient-accent sm:text-2xl">
+        <p class="mt-3 text-base font-medium leading-snug text-gradient-accent sm:mt-4 sm:text-xl lg:text-2xl">
           {site.role}
         </p>
-        <p class="mt-2 flex min-h-[1.75rem] items-center justify-center font-mono text-sm text-muted sm:text-base lg:justify-start">
+        <p class="mt-2 flex min-h-6 items-center justify-center font-mono text-xs text-muted sm:min-h-[1.75rem] sm:text-sm lg:justify-start">
           <span
             class="typewriter-text text-accent/90"
             data-typewriter
@@ -49,14 +49,14 @@ const typewriterPhrases = [
       </AnimatedReveal>
 
       <AnimatedReveal delay={0.08}>
-        <p class="mt-6 max-w-md text-base leading-relaxed text-muted sm:text-lg">
+        <p class="mt-5 max-w-md text-[0.9375rem] leading-relaxed text-muted sm:mt-6 sm:text-base lg:text-lg">
           {site.heroLead ?? site.tagline}
         </p>
       </AnimatedReveal>
 
       <AnimatedReveal delay={0.1}>
         <dl
-          class="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground lg:justify-start"
+          class="mt-5 flex flex-wrap justify-center gap-x-3 gap-y-1.5 text-xs text-muted-foreground sm:mt-6 sm:gap-x-4 sm:gap-y-2 sm:text-sm lg:justify-start"
         >
           <div>
             <dt class="sr-only">Ubicación</dt>
@@ -78,7 +78,7 @@ const typewriterPhrases = [
 
       <AnimatedReveal delay={0.12}>
         <div
-          class="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
+          class="mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:mt-8 sm:gap-3 lg:justify-start"
         >
           <a
             href={site.cvPdfPath}

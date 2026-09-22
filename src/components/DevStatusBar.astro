@@ -14,10 +14,11 @@ const firstName = site.name.split(' ')[0].toLowerCase();
       </svg>
       main
     </span>
-    <span class="dev-status-item text-accent-emerald/90">● working tree clean</span>
-    <span class="dev-status-item hidden sm:inline">{firstName}.dev</span>
-    <span class="dev-status-item hidden md:inline">TypeScript</span>
-    <span class="dev-status-item hidden lg:inline">UTF-8</span>
+    <span class="dev-status-item status-compact text-accent-emerald/90">● clean</span>
+    <span class="dev-status-item status-wide text-accent-emerald/90">● working tree clean</span>
+    <span class="dev-status-item status-wide">{firstName}.dev</span>
+    <span class="dev-status-item status-xl">TypeScript</span>
+    <span class="dev-status-item status-2xl">UTF-8</span>
     <button
       type="button"
       class="dev-status-palette"
@@ -26,7 +27,7 @@ const firstName = site.name.split(' ')[0].toLowerCase();
     >
       <kbd class="palette-kbd-sm">Ctrl</kbd>
       <kbd class="palette-kbd-sm">K</kbd>
-      <span class="hidden sm:inline">comandos</span>
+      <span class="status-palette-label">comandos</span>
     </button>
   </div>
 </div>

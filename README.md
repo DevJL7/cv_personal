@@ -55,7 +55,7 @@ Diseño tipo IDE, terminal integrada, modo oscuro y despliegue en el edge.
 
 ## 🧑‍💻 Para desarrolladores
 
-Este repo es un **sitio estático** generado con Astro 6 y servido desde **Cloudflare Workers** (plan gratuito, sin dominio propio requerido).
+Este repo es un **sitio estático** generado con Astro 7 y servido desde **Cloudflare Workers** (plan gratuito, sin dominio propio requerido).
 
 **Decisiones técnicas destacadas:**
 
@@ -86,15 +86,15 @@ Este repo es un **sitio estático** generado con Astro 6 y servido desde **Cloud
 
 ## 🛠 Stack tecnológico
 
-![Astro](https://img.shields.io/badge/Astro-6.4-BC52EE?logo=astro&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-7.3-BC52EE?logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-06B6D4?logo=tailwindcss&logoColor=white)
 ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 
 | Capa | Tecnologías |
 |------|-------------|
-| **Framework** | [Astro](https://astro.build) 6, [@astrojs/cloudflare](https://docs.astro.build/en/guides/integrations-guide/cloudflare/) |
+| **Framework** | [Astro](https://astro.build) 7, [@astrojs/cloudflare](https://docs.astro.build/en/guides/integrations-guide/cloudflare/) |
 | **Estilos** | Tailwind CSS v4, tailwindcss-animate |
 | **Tipografías** | Inter, Geist Mono (@fontsource-variable) |
 | **Iconos** | [Lucide](https://lucide.dev) (lucide-astro) |

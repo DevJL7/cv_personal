@@ -26,7 +26,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "wrangler": "^4.136.2"
+    "wrangler": "^4.141.0"
   },
   "allowScripts": {
     "workerd@1.20260921.1": true,
